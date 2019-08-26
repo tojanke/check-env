@@ -30,4 +30,4 @@ workflows:
                 - master
                 
     jobs:
-- build
+      - build
