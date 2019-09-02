@@ -5,7 +5,7 @@ RUN apt-get update -qq 1>>/dev/null \
     && apt-get clean 1>>apt.log && rm -rf /var/lib/apt/lists/*
 RUN wget -q https://sourceforge.net/projects/boost/files/boost/1.70.0/boost_1_70_0.tar.gz/download
 RUN tar xf download && rm download 
-RUN  mv boost_1_70_0/libs /boost/ && mv boost_1_70_0/bin.v2 /boost/ && mv boost_1_70_0/doc /boost/ && mv boost_1_70_0/tools /boost/
+RUN  mv boost_1_70_0/libs /boost/ && mv boost_1_70_0/doc /boost/ && mv boost_1_70_0/tools /boost/
 RUN rm -rf boost_1_70_0
 WORKDIR /boost
 RUN ./bootstrap.sh
