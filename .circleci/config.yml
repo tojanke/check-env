@@ -23,7 +23,7 @@ workflows:
   update:
     triggers:
       - schedule:
-          cron: "0 5 5 */4 *"
+          cron: "0 5 5 1,4,7,10 *"
           filters:
             branches:
               only:
