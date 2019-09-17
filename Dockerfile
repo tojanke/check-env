@@ -3,10 +3,10 @@ MAINTAINER Tobias Janke <tobias.janke@outlook.com>
 RUN apt-get update -qq 1>>/dev/null \
     && apt-get install -y -qq --no-install-recommends clang clang-tools clang-tidy valgrind cppcheck 1>/dev/null \
     && apt-get clean 1>>apt.log && rm -rf /var/lib/apt/lists/*
-RUN wget -q https://sourceforge.net/projects/boost/files/boost/1.70.0/boost_1_70_0.tar.gz/download \
-	&& tar xf download && rm download \
-	&& mv boost_1_70_0/libs /boost/ && mv boost_1_70_0/doc /boost/ && mv boost_1_70_0/tools /boost/ \
-	&& rm -rf boost_1_70_0 \
+RUN wget -q https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.gz \
+	&& tar xf boost_1_71_0.tar.gz && rm boost_1_71_0.tar.gz \
+	&& mv boost_1_71_0/libs /boost/ && mv boost_1_71_0/doc /boost/ && mv boost_1_71_0/tools /boost/ \
+	&& rm -rf boost_1_71_0 \
 	&& cd /boost && ./bootstrap.sh --with-toolset=clang \
 	&& ./b2 -j8 toolset=clang --build-type=complete --layout=versioned stage \
 	   --with-timer --with-date_time --with-random --with-test --with-thread --with-regex \  	
