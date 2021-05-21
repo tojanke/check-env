@@ -1,7 +1,7 @@
 FROM tojanke/build-env:testing
 MAINTAINER Tobias Janke <tobias.janke@outlook.com>
 RUN apt-get update -qq 1>/dev/null \
-    && apt-get install -y -qq --no-install-recommends clang clang-tools clang-tidy valgrind cppcheck 1>/dev/null \
+    && apt-get install -y -qq --no-install-recommends clang clang-tools clang-tidy valgrind cppcheck python 1>/dev/null \
     && apt-get clean 1>/dev/null && rm -rf /var/lib/apt/lists/*
 RUN wget -q https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.gz \
 	&& tar xf boost_1_76_0.tar.gz && rm boost_1_76_0.tar.gz \
