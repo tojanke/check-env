@@ -1,4 +1,4 @@
-FROM tojanke/build-env:testing
+FROM tojanke/build-env:latest
 MAINTAINER Tobias Janke <tobias.janke@outlook.com>
 RUN apt-get update -qq 1>/dev/null \
     && apt-get install -y -qq --no-install-recommends clang clang-tools clang-tidy valgrind cppcheck python3 python3-pip 1>/dev/null \
