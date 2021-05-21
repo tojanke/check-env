@@ -9,5 +9,5 @@ RUN wget -q https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boo
 	&& rm -rf boost_1_76_0 \
 	&& cd /boost && ./bootstrap.sh --with-toolset=clang 1>/dev/null \
 	&& ./b2 -j8 toolset=clang --build-type=complete --layout=versioned stage \
-	   --with-timer --with-date_time --with-random --with-test --with-thread --with-regex 1>/dev/null \  	
+	   --with-timer --with-date_time --with-random --with-system --with-test --with-thread --with-regex 1>/dev/null \  	
 	&& rm -rf /boost/libs && rm -rf /boost/bin.v2 && rm -rf /boost/doc && rm -rf /boost/tools
